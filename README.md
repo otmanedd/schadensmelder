@@ -70,14 +70,13 @@ So sieht das Frontend aus, wenn ein Schaden gemeldet wird:
 
 
 ### ⚙️ Automatisierungsprozess
-Das Projekt verarbeitet Meldungen vollständig automatisiert. Ablauf:
-flowchart LR
-    A[Benutzer füllt Formular aus] --> B[Frontend sendet POST an Backend (/report)]
-    B --> C[Backend empfängt Meldung]
-    C --> D[Backend ruft Ollama Mistral API auf]
-    D --> E[Ollama klassifiziert den Schaden automatisch]
-    E --> F[Backend sendet Klassifizierung an Frontend zurück]
-    F --> G[Frontend zeigt KI-Klassifizierung dem Benutzer]
+Der Schadensmelder verarbeitet Meldungen vollständig automatisch. Der Ablauf ist einfach:
+- Der Benutzer füllt das Formular im Frontend aus.
+- Das Frontend sendet die Meldung an das Backend (/report).
+- Das Backend empfängt die Meldung und ruft Ollama Mistral auf.
+- Ollama klassifiziert den Schaden automatisch (z. B. Heizung, Wasser, Strom, Sonstiges).
+- Das Backend schickt die Klassifizierung zurück an das Frontend.
+- Das Frontend zeigt das Ergebnis direkt dem Benutzer an.
 - Keine manuellen Schritte notwendig zwischen Meldung und Klassifizierung
 - Automatisierte Pipeline spart Zeit und Fehler bei der Klassifizierung
 
