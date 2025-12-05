@@ -1,0 +1,84 @@
+# Schadensmelder
+
+Ein KI-gestütztes Tool zur Meldung und Klassifizierung von Schäden (z. B. Heizung, Wasser, Strom oder Sonstiges) mithilfe von **Ollama**.  
+Benutzer können Schäden über ein einfaches Web-Interface melden, und die KI kategorisiert sie automatisch.
+
+---
+
+## 🚀 Features
+- Schadenmeldung über Webformular
+- KI-gestützte Klassifizierung der Meldungen via **Ollama Mistral**
+- Automatisierte Verarbeitung von Meldungen
+- Anzeige der Klassifizierung direkt im Browser
+- Einfacher Aufbau: Node.js Backend + HTML/JS Frontend
+
+---
+
+## 🧰 Tech Stack
+- **Backend**: Node.js, Express, Axios, CORS
+- **Frontend**: HTML, CSS, JavaScript
+- **KI**: Ollama (lokales Mistral-Modell)
+- **Abhängigkeiten**: Siehe `package.json`
+
+---
+
+
+---
+
+## ▶️ Installation & Setup
+
+### 1. Repository klonen
+```bash
+git clone https://github.com/otmanedd/schadensmelder.git
+cd schadensmelder
+```
+### 2. Backend einrichten
+```
+cd backend
+npm install
+```
+## 3. Ollama einrichten
+Ollama installieren (macOS Beispiel):
+```
+brew install ollama
+
+```
+Modell laden:
+```
+ollama pull mistral
+```
+
+## 4. Backend starten
+```
+npm start
+```
+Das Backend läuft dann auf: http://localhost:3000
+
+## 5. Frontend starten
+- Einfach frontend/index.html im Browser öffnen
+- Formular ausfüllen und Schaden melden
+## 🧪 Nutzung
+1. Öffne frontend/index.html im Browser
+2 Beschreibe den Schaden im Textfeld
+3. Klicke auf Melden
+4. Das Backend fragt Ollama ab und gibt die Klassifizierung zurück
+## Screenshot beispiel
+
+### ⚙️ Automatisierungsprozess
+Das Projekt verarbeitet Meldungen vollständig automatisiert. Ablauf:
+flowchart LR
+    A[Benutzer füllt Formular aus] --> B[Frontend sendet POST an Backend (/report)]
+    B --> C[Backend empfängt Meldung]
+    C --> D[Backend ruft Ollama Mistral API auf]
+    D --> E[Ollama klassifiziert den Schaden automatisch]
+    E --> F[Backend sendet Klassifizierung an Frontend zurück]
+    F --> G[Frontend zeigt KI-Klassifizierung dem Benutzer]
+- Keine manuellen Schritte notwendig zwischen Meldung und Klassifizierung
+- Automatisierte Pipeline spart Zeit und Fehler bei der Klassifizierung
+
+### ✅ Roadmap / Mögliche Features
+- Upload von Fotos für Schäden
+- Speicherung der Meldungen in Datenbank
+- Erweiterte KI-Analyse für genauere Klassifizierung
+- Dashboard mit Statistiken
+- Authentifizierung / Benutzerverwaltung
