@@ -62,7 +62,12 @@ Das Backend läuft dann auf: http://localhost:3000
 2 Beschreibe den Schaden im Textfeld
 3. Klicke auf Melden
 4. Das Backend fragt Ollama ab und gibt die Klassifizierung zurück
-## Screenshot beispiel
+## 📸 Screenshot beispiel
+So sieht das Frontend aus, wenn ein Schaden gemeldet wird:
+
+![Schadensmelder Frontend](frontend/Screenshot-45.png)
+![Schadensmelder Frontend](frontend/Screenshot-44.png)
+
 
 ### ⚙️ Automatisierungsprozess
 Das Projekt verarbeitet Meldungen vollständig automatisiert. Ablauf:
